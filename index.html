@@ -49,14 +49,14 @@ const addMessage = (message) => {
 
 // getting messages
 const getMessages  = () => {
-    $.get('http://localhost:3000/messages', (data) => {
+    $.get('http://chatty-me.herokuapp.com/messages', (data) => {
         data.forEach(addMessage)
     })
 }
 
 // posting a message
 const postMessage  = (message) => {
-    $.post('http://localhost:3000/messages', message) 
+    $.post('http://chatty-me.herokuapp.com/messages', message) 
 }
 </script>
 </html>

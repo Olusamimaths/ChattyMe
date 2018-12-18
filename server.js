@@ -5,6 +5,7 @@ let http = require('http').Server(app)
 let io = require('socket.io')(http)
 const mongoose = require('mongoose')
 const dbUrl = 'mongodb://admin:admin123@ds237574.mlab.com:37574/chatty'
+const port = process.env.PORT || 3000
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
@@ -38,4 +39,4 @@ mongoose.connect(dbUrl, (err) => {
     console.log('Mongodb connection successful');
 })
 
-const server = http.listen(3000, () => console.log(`Server is listening on port ${server.address().port}`))
+const server = http.listen(port, () => console.log(`Server is listening on port ${port}}`))
